@@ -114,7 +114,7 @@ while True:
     IP = subprocess.check_output(cmd, shell = True )
     cmd = "top -bn1 | grep load | awk '{printf \"CPU: %.2f\", $(NF-2)}'"
     CPU = subprocess.check_output(cmd, shell = True )
-    cmd = "free -m | awk 'NR==2{printf \"Mem: %.2f%%\", $3*100/$2 }'"
+    cmd = "free -m | awk 'NR==2{printf \"Mem: %d%%\", $3*100/$2 }'"
     MemUsage = subprocess.check_output(cmd, shell = True )
     #cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
     #Disk = subprocess.check_output(cmd, shell = True )
@@ -122,7 +122,7 @@ while True:
     # Write two lines of text.
     draw.text((x, top),       "NAME: " + HOSTNAME, font=font, fill=255)
     draw.text((x, top+12),    "IP  : " + str(IP),  font=font, fill=255)
-    draw.text((x, top+24),    str(CPU) + " | " + str(MemUsage), font=font, fill=255)
+    draw.text((x, top+24),    str(CPU) + "  " + str(MemUsage), font=font, fill=255)
 
     # Display image.
     disp.image(image)
