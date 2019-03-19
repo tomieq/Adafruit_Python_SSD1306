@@ -121,7 +121,7 @@ while True:
 
     # Write two lines of text.
     draw.text((x, top),       "NAME: " + HOSTNAME, font=font, fill=255)
-    draw.text((x, top+12),    "IP  : " + str(IP),  font=font, fill=255)
+    draw.text((x, top+12),    "IP: " + str(IP),  font=font, fill=255)
     draw.text((x, top+24),    str(CPU) + "  " + str(MemUsage), font=font, fill=255)
 
     # Display image.
